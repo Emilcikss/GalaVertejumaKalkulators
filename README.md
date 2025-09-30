@@ -1,5 +1,5 @@
 # GalaVertejumaKalkulators
-Pārņemu darbu un sācis realizēt darbu sarakstu!
+Pārņemu darbu un sācis realizēt darbu sarakstu! 
 **Darāmo darbu saraksts**
 - [x] Izstrādāt projekta sākotnējo versiju (viena klase, bez metodēm)
 - [ ] Programmas kodu izdalīt metodēs
@@ -15,3 +15,4 @@ Pārņemu darbu un sācis realizēt darbu sarakstu!
 	- [ ] Aprēķināt gala vērtējumu
 	- [ ] Saglabāt rezultātus failā
 	- [ ] Nolasīt rezultātus no faila
+## VISS KO ES DARIJU IZDZESAS !!!!!!!!!!!!!!!!!!!!!!!!
