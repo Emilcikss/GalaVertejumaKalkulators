@@ -44,18 +44,12 @@ public class Metodes {
 				}
 				kritSk = scan.nextInt();
 			}while(kritSk<1);
-			String[] kriteriji = new String[kritSk];
-			int[] kriterijaSvars = new int[kritSk];
-			int[][] kriterijaVertejums = new int[studSk][kritSk];
-			double[] semestraVertejums = new double[studSk];
-			
 			scan.nextLine();
 		}
 		
 		// -------------------------------------------------------------------------
 	
 		public static void Ievadaaudzēkņuvārdusuzvārdus() {
-			
 		for(int i=0; i<studenti.length(); i++) {
 
 			do {

@@ -15,32 +15,19 @@ public class GalvenaKlase {
 		
 		int izvele;
 		JOptionPane.showOptionDialog(null, "Izvēlejaties darbību", "Darbibas izvele",
-				JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, izvele, izvele[0]);
+				JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, Opcijas, izvele);
 		
 		switch (izvele) {
 		case 0:
-			JOptionPane.showMessageDialog(null, );
+			Metodes.Audzēkņuskaitaievade();
+			break;
+			
 		case 1:
-			JOptionPane.showMessageDialog(null, );
-		case 2:
-			JOptionPane.showMessageDialog(null, );
-		case 3:
-			JOptionPane.showMessageDialog(null, );
-		case 4:
-			JOptionPane.showMessageDialog(null, );
-		case 5:
-			JOptionPane.showMessageDialog(null, );
-		case 6:
-			JOptionPane.showMessageDialog(null, );
-		case 7:
-			JOptionPane.showMessageDialog(null, );
-		case 8:
-			JOptionPane.showMessageDialog(null, );
-		case 9:
-			JOptionPane.showMessageDialog(null, );
-		case 10:
-			JOptionPane.showMessageDialog(null, );
-		}
+			Metodes.Audzēkņuskaitaievade();
+			break;
+			
+
 		}
 		
 	}
+}
