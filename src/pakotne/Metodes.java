@@ -5,12 +5,23 @@ import java.util.Scanner;
 
 public class Metodes {
 	
-	public static void main(String[] args) {
-		int studSk, kritSk;
-		Scanner scan = new Scanner(System.in);
-		DecimalFormat df = new DecimalFormat("0.#");
+		public static int studSk;
+
+		public static int kritSk;
 		
-		// Audzēkņu skaita ievade
+		public static String studenti;
+		
+		public static String[] kriteriji = new String[kritSk];
+		public static int[] kriterijaSvars = new int[kritSk];
+		public static int[][] kriterijaVertejums = new int[studSk][kritSk];
+		public static double[] semestraVertejums = new double[studSk];
+		
+		public static Scanner scan = new Scanner(System.in);
+	public static DecimalFormat df = new DecimalFormat("0.#");
+		
+	// -------------------------------------------------------------------------
+	
+		public static void Audzēkņuskaitaievade(){
 		do {
 			System.out.println("Cik studentiem aprēķināsi gala vērtējumu?");
 			while(!scan.hasNextInt()) {
@@ -20,32 +31,45 @@ public class Metodes {
 			studSk = scan.nextInt();
 		}while(studSk<1);
 		String[] studenti = new String[studSk];
+		}
 		
-		// Vērtēšanas kritēriju skaita ievade
-		do {
-			System.out.println("Kāds būs kritēriju skaits?");
-			while(!scan.hasNextInt()) {
+		// -------------------------------------------------------------------------
+		
+		public static void Vērtēšanaskritērijuskaitaievade() {
+			do {
 				System.out.println("Kāds būs kritēriju skaits?");
-				scan.next();
-			}
-			kritSk = scan.nextInt();
-		}while(kritSk<1);
-		String[] kriteriji = new String[kritSk];
-		int[] kriterijaSvars = new int[kritSk];
-		int[][] kriterijaVertejums = new int[studSk][kritSk];
-		double[] semestraVertejums = new double[studSk];
+				while(!scan.hasNextInt()) {
+					System.out.println("Kāds būs kritēriju skaits?");
+					scan.next();
+				}
+				kritSk = scan.nextInt();
+			}while(kritSk<1);
+			String[] kriteriji = new String[kritSk];
+			int[] kriterijaSvars = new int[kritSk];
+			int[][] kriterijaVertejums = new int[studSk][kritSk];
+			double[] semestraVertejums = new double[studSk];
+			
+			scan.nextLine();
+		}
 		
-		scan.nextLine();
-		
-		// Ievada audzēkņu vārdus, uzvārdus
-		for(int i=0; i<studenti.length; i++) {
+		// -------------------------------------------------------------------------
+	
+		public static void Ievadaaudzēkņuvārdusuzvārdus() {
+			
+		for(int i=0; i<studenti.length(); i++) {
+
 			do {
 				System.out.println("Ievadi "+(i+1)+". studentu");
 				studenti[i] = scan.nextLine().trim();
 			} while(!studenti[i].matches("^[\\p{L} ]+$"));
 		}
 		
-		// Definē kritērijus
+		}
+		
+		// -------------------------------------------------------------------------
+		
+		public static void  Definēkritērijus() {
+			
 		int maxSvars = 100, sk = 1;
 		double atlSvars;
 		for(int i=0; i<kriteriji.length; i++) {
@@ -74,7 +98,12 @@ public class Metodes {
 			sk++;
 			scan.nextLine();
 		}
+		}
 		
+		// -------------------------------------------------------------------------
+		
+		public static void NoradaVert() {
+			
 		// Norāda vērtējumu kādu ieguvis katrs audzēknis par katru kritēriju
 		for(int i=0; i<kriterijaVertejums.length; i++) {
 			for(int j=0; j<kriterijaVertejums[i].length; j++) {
@@ -88,10 +117,13 @@ public class Metodes {
 				}while(kriterijaVertejums[i][j]<0 || kriterijaVertejums[i][j]>10);
 			}
 		}
+		}
 		
+		// -------------------------------------------------------------------------
+	public static void Galavērtējumaaprēķināšana() {
 		// Gala vērtējuma aprēķināšana
 		double rezultats;
-		for(int i=0; i<studenti.length; i++) {
+		for(int i=0; i<studenti.length(); i++) {
 			rezultats=0;
 			for(int j=0; j<kriteriji.length; j++) {
 				rezultats += ((double) kriterijaSvars[j]/100)*kriterijaVertejums[i][j];
@@ -100,7 +132,7 @@ public class Metodes {
 		}
 		
 		// Gala vērtējumu izvadīšana
-		for(int i=0; i<studenti.length; i++) {	
+		for(int i=0; i<studenti.length(); i++) {	
 			for(int j=0; j<kriteriji.length; j++) {
 				System.out.println("Studenta "+studenti[i]+" vērtējums par kritēriju "+kriteriji[j]+" ir "+kriterijaVertejums[i][j]+", kura svars ir "+kriterijaSvars[j]);
 			}
